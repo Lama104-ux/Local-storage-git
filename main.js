@@ -35,7 +35,7 @@ function renderPosts() {
         article.className = "post-article";
 
         const heart = document.createElement("button");
-        heart.textContent = likedPosts.includes(post.id) ? "💕" : "❤️";
+        heart.textContent = likedPosts.includes(post.id) ? "🤣" : "❤️";
         heart.className = "like-button";
         heart.onclick = () => {
             if (likedPosts.includes(post.id)) {
