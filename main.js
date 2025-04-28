@@ -19,6 +19,8 @@ const posts = [{
 },
 ];
 
+let likedPosts = [];
+
 function main() {
     //what should the program do at start?
     renderPosts();
@@ -26,14 +28,24 @@ function main() {
 function renderPosts() {
 
     const main = document.querySelector("main");
+    main.innerHTML = null;
+
     for (const post of posts) {
         const article = document.createElement("article")
         article.className = "post-article";
 
         const heart = document.createElement("button");
-        heart.textContent = ("❤️");
+        heart.textContent = likedPosts.includes(post.id) ? "💕" : "❤️";
         heart.className = "like-button";
         heart.onclick = () => {
+            if (likedPosts.includes(post.id)) {
+                likedPosts = likedPosts.filter((id) => id !== post.id);
+
+            } else {
+
+                likedPosts.push(post.id);
+            }
+            renderPosts();
 
 
         };
