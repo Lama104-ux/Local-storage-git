@@ -33,6 +33,10 @@ function renderPosts() {
         const heart = document.createElement("button");
         heart.textContent = ("❤️");
         heart.className = "like-button";
+        heart.onclick = () => {
+
+
+        };
 
         const img = document.createElement("img");
         img.src = post.imageUrl;
@@ -40,8 +44,8 @@ function renderPosts() {
         img.className = "image";// för css
 
         main.append(img);
-        // article.append(heart);
-        article.append(article);
+        article.append(heart);
+        main.append(article);
 
     }
 }
