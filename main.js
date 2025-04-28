@@ -27,10 +27,21 @@ function renderPosts() {
 
     const main = document.querySelector("main");
     for (const post of posts) {
+        const article = document.createElement("article")
+        article.className = "post-article";
+
+        const heart = document.createElement("button");
+        heart.textContent = ("❤️");
+        heart.className = "like-button";
+
         const img = document.createElement("img");
         img.src = post.imageUrl;
         img.alt = post.title;
         img.className = "image";// för css
+
         main.append(img);
+        // article.append(heart);
+        article.append(article);
+
     }
 }
